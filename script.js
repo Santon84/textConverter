@@ -30,7 +30,7 @@ const removeSpaces = () => {
     inputText = inputText.replace(/\s+/g, ' ')
     .trim()
     .replaceAll(' .', '.')
-    .replaceAll(' ,', ',')
+    .replaceAll(' ,', ',');
     
 
     charsDisplay.innerHTML = `Всего симовлов: ${inputText.length}`;
