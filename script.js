@@ -25,8 +25,6 @@ const removeSpaces = () => {
     // for (let i=0; i<inputText.length; i++) {
         
     // }
-    console.log(inputText.split(' '));
-    console.log(inputText.split(' ').filter(elem => elem != '').join(' '));
     inputText = inputText.replace(/\s+/g, ' ')
     .trim()
     .replaceAll(' .', '.')
