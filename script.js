@@ -31,7 +31,7 @@ const removeSpaces = () => {
     .trim()
     .replaceAll(' .', '.')
     .replaceAll(' ,', ',')
-    .replace(/(\.)([A-ZА-Я)]/g, '$1 X $2');
+    
 
     charsDisplay.innerHTML = `Всего симовлов: ${inputText.length}`;
     text.value = inputText;
