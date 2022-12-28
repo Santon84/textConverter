@@ -28,10 +28,16 @@ const removeSpaces = () => {
     inputText = inputText.replace(/\s+/g, ' ')
     .trim()
     .replaceAll(' .', '.')
-    .replaceAll(' ,', ',');
+    .replaceAll(' ,', ',')
+    .replaceAll(' ;', ';')
+    .replaceAll(' :', ':')
+    .replaceAll(' !', '!')
+    .replaceAll(' ?', '?')
+    .replaceAll('( ', '(')
+    .replaceAll(' )', ')')
     
 
-    charsDisplay.innerHTML = `Всего симовлов: ${inputText.length}`;
+    charsDisplay.innerHTML = `Всего символов: ${inputText.length}`;
     text.value = inputText;
 }
 
@@ -39,7 +45,9 @@ let defaulText = '';
 let inputText = '';
 const charsDisplay = document.querySelector('.char-count');
 const text = document.getElementById('inputText');
-console.log(text)
+const button = document.getElementById('mybtn');
+
+
 text.addEventListener('input', (e) => {
     
     inputText = e.target.value;
