@@ -37,7 +37,7 @@ const removeSpaces = () => {
     .replaceAll(' )', ')')
     
 
-    charsDisplay.innerHTML = `Всего символов: ${inputText.length}`;
+    charsDisplay.innerHTML = `Cимволов: ${inputText.length}`;
     text.value = inputText;
 }
 
@@ -51,5 +51,5 @@ const button = document.getElementById('mybtn');
 text.addEventListener('input', (e) => {
     
     inputText = e.target.value;
-    charsDisplay.innerHTML = inputText.length;
+    charsDisplay.innerHTML = `Cимволов: ${inputText.length}`;
 })
