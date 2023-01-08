@@ -14,7 +14,7 @@ const capitalizeFirstLetter = (string) => {
 } 
 
 const textCapitalizeAll = () => {
-    defaulText = inputText;
+    inputText = text.value.toLowerCase();
     console.log(inputText.split(/(?:,|- )+/));
     inputText = inputText.split(' ').map(word => capitalizeFirstLetter(word)).join(' ');
     text.value = inputText;
@@ -23,7 +23,7 @@ const textCapitalizeAll = () => {
 const removeSpaces = () => {
     let outputText = '';
     // for (let i=0; i<inputText.length; i++) {
-        
+    inputText = text.value; 
     // }
     inputText = inputText.replace(/\s+/g, ' ')
     .trim()
@@ -41,6 +41,14 @@ const removeSpaces = () => {
     text.value = inputText;
 }
 
+
+const CapitalizeSentence = () => {
+    inputText = text.value.toLowerCase();
+    //console.log(inputText.split(/(?:,|- )+/));
+    inputText = inputText.split('. ').map(word => capitalizeFirstLetter(word)).join('. ');
+    text.value = inputText;
+}
+
 let defaulText = '';
 let inputText = '';
 const charsDisplay = document.querySelector('.char-count');
@@ -53,3 +61,4 @@ text.addEventListener('input', (e) => {
     inputText = e.target.value;
     charsDisplay.innerHTML = `Cимволов: ${inputText.length}`;
 })
+
