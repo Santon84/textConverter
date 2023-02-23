@@ -25,7 +25,7 @@ const removeSpaces = () => {
     // for (let i=0; i<inputText.length; i++) {
     inputText = text.value; 
     // }
-    inputText = inputText.replace(/\s+/g, ' ')
+    outputText = inputText.replace(/\s+/g, ' ')
     .trim()
     .replaceAll(' .', '.')
     .replaceAll(' ,', ',')
@@ -37,10 +37,22 @@ const removeSpaces = () => {
     .replaceAll(' )', ')')
     
 
+    charsDisplay.innerHTML = `Cимволов: ${outputText.length}`;
+    text.value = outputText;
+}
+
+
+const removeAllSpaces = () => {
+    let outputText = '';
+    // for (let i=0; i<inputText.length; i++) {
+    inputText = text.value; 
+    // }
+    inputText = inputText.replace(/\s+/g, '')
+    .trim();
+    
     charsDisplay.innerHTML = `Cимволов: ${inputText.length}`;
     text.value = inputText;
 }
-
 
 const CapitalizeSentence = () => {
     inputText = text.value.toLowerCase();
@@ -49,12 +61,55 @@ const CapitalizeSentence = () => {
     text.value = inputText;
 }
 
+const markCyrillic = () => {
+    inputText = text.value;
+    let outText = '';
+    const symbols = 'АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя';
+
+    for (let i=0; i<inputText.length; i++) {
+
+        if (~symbols.indexOf(inputText[i])) {
+
+            
+            outText += '<mark>'+inputText[i]+'</mark>'
+        }
+        else {
+            outText += inputText[i];
+        }
+    }
+    outerText.innerHTML = outText;
+}
+const markLatin = () => {
+    inputText = text.value;
+    let outText = '';
+    const symbols = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    for (let i=0; i<inputText.length; i++) {
+
+        if (~symbols.indexOf(inputText[i])) {
+
+            
+            outText += '<mark>'+inputText[i]+'</mark>'
+        }
+        else {
+            outText += inputText[i];
+        }
+    }
+    outerText.innerHTML = outText;
+}
+
+const clearAll = () => {
+    outerText.innerHTML = '';
+    inputText = '';
+}
+
+
 let defaulText = '';
 let inputText = '';
 const charsDisplay = document.querySelector('.char-count');
 const text = document.getElementById('inputText');
 const button = document.getElementById('mybtn');
-
+const outerText = document.querySelector('.result-text>code');
 
 text.addEventListener('input', (e) => {
     

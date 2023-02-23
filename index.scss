@@ -9,7 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  
 }
 
 .App {
@@ -35,7 +35,7 @@ body {
       margin-top: 20px;
       cursor: pointer;
     }
-
+    
     h2 {
       margin-bottom: 0;
     }
@@ -43,6 +43,15 @@ body {
     img {
       width: 150px;
     }
+  
+  }
+  .result-text {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .result-text > pre > code {
+    display: inline-block; 
+    width: 100%;
   }
 
   .progress {
