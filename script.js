@@ -1,19 +1,23 @@
 const textToUpperCase = () => {
-    defaulText = inputText;
-    text.value = inputText.toUpperCase()
+    clearAll();
+       
+    text.value = text.value.toUpperCase()
     
 }
 
 const textToLowerCase = () => {
-    defaulText = inputText;
-    text.value = inputText.toLowerCase() 
+    clearAll();
+    
+    text.value = text.value.toLowerCase() 
 }
 
 const capitalizeFirstLetter = (string) => {
+    
     return string.charAt(0).toUpperCase() + string.slice(1);
 } 
 
 const textCapitalizeAll = () => {
+    clearAll();
     inputText = text.value.toLowerCase();
     console.log(inputText.split(/(?:,|- )+/));
     inputText = inputText.split(' ').map(word => capitalizeFirstLetter(word)).join(' ');
@@ -21,6 +25,7 @@ const textCapitalizeAll = () => {
 }
 
 const removeSpaces = () => {
+    clearAll();
     let outputText = '';
     // for (let i=0; i<inputText.length; i++) {
     inputText = text.value; 
@@ -43,18 +48,20 @@ const removeSpaces = () => {
 
 
 const removeAllSpaces = () => {
+    clearAll();
     let outputText = '';
     // for (let i=0; i<inputText.length; i++) {
     inputText = text.value; 
     // }
-    inputText = inputText.replace(/\s+/g, '')
+    outputText = inputText.replace(/\s+/g, '')
     .trim();
     
-    charsDisplay.innerHTML = `Cимволов: ${inputText.length}`;
-    text.value = inputText;
+    charsDisplay.innerHTML = `Cимволов: ${outputText.length}`;
+    text.value = outputText;
 }
 
 const CapitalizeSentence = () => {
+    clearAll();
     inputText = text.value.toLowerCase();
     //console.log(inputText.split(/(?:,|- )+/));
     inputText = inputText.split('. ').map(word => capitalizeFirstLetter(word)).join('. ');
